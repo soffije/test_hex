@@ -11,8 +11,8 @@ namespace Endian
 	static bool Arch_Is_Big_Endian()
 	{
 		union {
-			uint32_t i;
-			char c[4];
+			uint32_t i; //инициализируем 4-байтовое целое число
+			char c[4]; //для проверки отдельных байтов для определения порядка памяти
 		} bint = { 0x01020304 };
 		return bint.c[0] == 1;
 	}
